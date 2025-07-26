@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #e0f2e9;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #A5D6A7;
+    text-decoration: underline;
+}
+
+body {
+    min-height: 100vh;
+    background: #111416;
+    color: #e0f2e9;
+}
+
+.pagina_motorista {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    position: relative;
+}
+
+.secao_boas_vindas {
+    flex: 1;
+    background-color: #2E7D32;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.conteudo_boas_vindas {
+    text-align: center;
+    background-color: rgba(27, 94, 32, 0.9);
+    padding: 2.5rem;
+    border-radius: 15px;
+}
+
+.icone_reciclagem {
+    font-size: 4rem;
+    color: #A5D6A7;
+    margin-bottom: 1.5rem;
+}
+
+.secao_boas_vindas h1 {
+    font-size: 2.4rem;
+    color: #E8F5E9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.secao_boas_vindas p {
+    font-size: 1.2rem;
+    color: #dcedc8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.secao_menu {
+    flex: 2;
+    padding: 3rem;
+    background-color: #181b1e;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-content: center;
+}
+
+.card_menu {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.card_menu:hover {
+    background-color: rgba(76, 175, 80, 0.15);
+}
+
+.card_menu i {
+    font-size: 3rem;
+    color: #66bb6a;
+    margin-bottom: 1.2rem;
+}
+
+.card_menu h2 {
+    color: #e8f5e9;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.card_menu p {
+    color: #c8e6c9;
+    font-size: 1rem;
+}
+
+.botao_logout {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    background-color: transparent;
+    border: 2px solid #388e3c;
+    border-radius: 30px;
+    color: #e8f5e9;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.botao_logout:hover {
+    background-color: #2e7d32;
+}
+
+.rodape_mobile {
+    display: none;
+    width: 100%;
+    background-color: #111416;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+.rodape_mobile a {
+    color: #e8f5e9;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.rodape_mobile i {
+    color: #66bb6a;
+}
+
+@media (max-width: 1024px) {
+    .pagina_motorista {
+        flex-direction: column;
+    }
+
+    .secao_boas_vindas {
+        padding: 3rem 1rem;
+    }
+
+    .secao_menu {
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+    }
+
+    .botao_logout {
+        display: none;
+    }
+
+    .rodape_mobile {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .secao_menu {
+        grid-template-columns: 1fr;
+    }
+
+    .icone_reciclagem {
+        font-size: 3rem;
+    }
+
+    .secao_boas_vindas h1 {
+        font-size: 2rem;
+    }
+
+    .card_menu h2 {
+        font-size: 1.4rem;
+    }
+
+    .card_menu p {
+        font-size: 0.95rem;
+    }
+}

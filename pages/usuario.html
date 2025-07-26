@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save World - Smart Coleta</title>
+    <link rel="stylesheet" href="../styles/usuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="menu" id="menu" data-aos="fade-right">
+        <div class="smart">
+            <h2>Smart Coleta</h2>                
+        </div>
+        <article class="reciclagem" onclick="selectTipo(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 512 512"><path d="M256 0c141.4 0 256 114.6 256 256S397.4 512 256 512 0 397.4 0 256 114.6 0 256 0zm-55.2 159.8l33.2-57.5c4.6-8 14.8-10.8 22.8-6.2s10.8 14.8 6.2 22.8l-33.2 57.5 25.1 14.4 33.2-57.5c13.7-23.7 5.5-53.9-18.2-67.6s-53.9-5.5-67.6 18.2l-33.2 57.5 25.1 14.4zm126.4 222.4l-33.2 57.5c-13.7 23.7-43.9 31.9-67.6 18.2s-31.9-43.9-18.2-67.6l33.2-57.5-25.1-14.4-33.2 57.5c-18.3 31.8-7.5 72.6 24.3 90.9s72.6 7.5 90.9-24.3l33.2-57.5-25.1-14.4zm73.3-130.4l-66.4-38.4-25.1 14.4 66.4 38.4c8 4.6 10.8 14.8 6.2 22.8s-14.8 10.8-22.8 6.2l-66.4-38.4-25.1 14.4 66.4 38.4c23.7 13.7 53.9 5.5 67.6-18.2s5.5-53.9-18.2-67.6z"/></svg>
+            <h3>Reciclável</h3>
+            <p>Papel, plástico, vidro e metal</p>
+        </article>
+        <article class="reciclagem" onclick="selectTipo(this)">
+             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 512 512"><path d="M256 48c114.9 0 208 93.1 208 208s-93.1 208-208 208S48 370.9 48 256 141.1 48 256 48zm0 64a16 16 0 00-16 16v64h-64a16 16 0 000 32h64v64a16 16 0 0032 0v-64h64a16 16 0 000-32h-64v-64a16 16 0 00-16-16z"/></svg>
+            <h3>Orgânico</h3>
+            <p>Restos de alimentos e materiais biodegradáveis</p>
+        </article>
+        <article class="reciclagem" onclick="selectTipo(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 512 512"><path d="M256 0C114.8 0 0 114.8 0 256s114.8 256 256 256 256-114.8 256-256S397.2 0 256 0zm0 96a160 160 0 110 320 160 160 0 010-320zm0 64a96 96 0 100 192 96 96 0 000-192z"/></svg>
+            <h3>Especial</h3>
+            <p>Pilhas, baterias e eletrônicos</p>
+        </article>
+    </aside>
+
+    <main class="container">
+        <section class="endereco_container">
+            <div class="endereco_filho">
+                <article class="item">
+                    <label for="cep">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 384 512"><path d="M168 0C75.3 0 0 75.3 0 168c0 87.3 134.8 272.6 156.8 300.2c5.6 7.1 15.8 7.1 21.4 0C249.2 440.6 384 255.3 384 168C384 75.3 308.7 0 216 0H168zm0 96a72 72 0 1 1 0 144 72 72 0 1 1 0-144z"/></svg>
+                        CEP
+                    </label>
+                    <input type="text" id="cep" placeholder="Digite o CEP" onblur="buscarCEP()">
+                </article>
+                <article class="item">
+                    <label for="numero">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 576 512"><path d="M570.69 236.27L512 184.44V48a16 16 0 0 0-16-16H416a16 16 0 0 0-16 16v72.22L318.47 43.17c-12.17-10.29-30.77-10.3-42.95 0L5.31 236.27c-6.99 5.91-7.9 16.2-2 23.2l21.4 25.3c5.9 6.99 16.2 7.9 23.2 2L64 271.27V464a48 48 0 0 0 48 48h96a16 16 0 0 0 16-16V368h96v128a16 16 0 0 0 16 16h96a48 48 0 0 0 48-48V271.27l16.1 15.5c7 5.9 17.3 5 23.2-2l21.4-25.3c5.9-6.99 5-17.29-2-23.2z"/></svg>
+                        Número
+                    </label>
+                    <input type="text" id="numero" placeholder="Digite o número">
+                </article>
+                <article class="item">
+                    <label for="complemento">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 640 512"><path d="M320 32c53 0 96 43 96 96s-43 96-96 96s-96-43-96-96s43-96 96-96zm0 224c88.4 0 160 71.6 160 160v64H160v-64c0-88.4 71.6-160 160-160z"/></svg>
+                        Complemento
+                    </label>
+                    <input type="text" id="complemento" placeholder="Digite o complemento, se houver">
+                </article>
+                <article class="item">
+                    <label for="rua">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 576 512"><path d="M288 0C129.1 0 0 128.9 0 288c0 63.6 22.5 122.1 59.7 168.2c6.8 8.4 18.4 9.9 26.9 3.4L288 304l201.4 155.6c8.5 6.5 20.1 5 26.9-3.4C553.5 410.1 576 351.6 576 288c0-159.1-129.1-288-288-288z"/></svg>
+                        Rua
+                    </label>
+                    <input type="text" id="rua" placeholder="Digite o nome da rua">
+                </article>
+                <article class="item">
+                    <label for="bairro">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 576 512"><path d="M336 0c-49.1 0-93.1 25.8-119.1 64H56C25.1 64 0 89.1 0 120v304c0 30.9 25.1 56 56 56h304c30.9 0 56-25.1 56-56V119.1C416 52.9 381.1 0 336 0zM48 432V128c0-4.4 3.6-8 8-8h160v320H56c-4.4 0-8-3.6-8-8zm368 0c0 4.4-3.6 8-8 8h-160V120c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v312z"/></svg>
+                        Bairro
+                    </label>
+                    <input type="text" id="bairro" placeholder="Digite o bairro">
+                </article>
+                <article class="item">
+                    <label for="cidade">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 640 512"><path d="M0 464V368c0-8.8 7.2-16 16-16H64V256H16c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16H128V64c0-8.8 7.2-16 16-16H224V0h64V48h80V0h64V48h80V0h64V48h16c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H576v96h48c8.8 0 16 7.2 16 16v32H0V464zM192 96v96h96V96H192zm128 0v96h96V96H320zm128 0v96h96V96H448zM128 240v96h96V240H128zm128 0v96h96V240H256zm128 0v96h96V240H384z"/></svg>
+                        Cidade
+                    </label>
+                    <input type="text" id="cidade" placeholder="Digite a cidade">
+                </article>
+            </div>
+
+            <section class="agenda_container" data-aos="fade-up">
+                <h2>Agendar Coleta</h2>
+                <article class="input">
+                    <label style="color: white;">Data da Coleta</label>
+                    <input type="date" id="data" min="">
+                </article>
+                <section class="horas">
+                    <article class="horario" onclick="selectHorario(this)">
+                        <p>08:00 - 09:00</p>
+                    </article>
+                    <article class="horario" onclick="selectHorario(this)">
+                        <p>09:00 - 10:00</p>
+                    </article>
+                    <article class="horario" onclick="selectHorario(this)">
+                        <p>10:00 - 11:00</p>
+                    </article>
+                    <article class="horario" onclick="selectHorario(this)">
+                        <p>11:00 - 12:00</p>
+                    </article>
+                    <article class="horario" onclick="selectHorario(this)">
+                        <p>12:00 - 13:00</p>
+                    </article>
+                    <article class="horario" onclick="selectHorario(this)">
+                        <p>13:00 - 14:00</p>
+                    </article>
+                </section>
+                <article class="input">
+                    <label style="color: white;">Observações</label>
+                    <textarea id="observacoes" rows="3" placeholder="Informações adicionais..."></textarea>
+                </article>
+            </section>
+            <button class="endereco_btn" onclick="salvarEndereco()">
+                <i class="fas fa-check"></i>
+                Confirmar Endereço
+            </button>
+        </section>
+
+   <div class="tabela-coleta-container fade-in-up">
+        <div class="tabela-coleta-conteudo">
+            <div class="tabela-scroll-horizontal">
+            <table class="tabela-coleta">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Complemento</th>
+            <th>Endereço</th>
+            <th>Cidade</th>
+            <th>Data</th>
+            <th>Horário</th>
+            <th>Tipo</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-agendamentos">
+            <td>
+                <button class="btn-excluir" onclick="excluirColeta(1)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+          <!-- Linhas dinâmicas -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../scripts/js/usuario.js"></script>
+</body>
+</html>

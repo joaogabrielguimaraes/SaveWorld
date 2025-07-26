@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save World - Reciclagem Inovadora</title>
+    <link rel="stylesheet" href="styles/index2.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Save World</a>
+        <nav class="links">
+            <a href="#inicio">Início</a>
+            <a href="#importancia">Importância</a>
+            <a href="#sobre">Sobre Nós</a>
+            <div class="acao_btn">
+                <a href="pages/primeiroCadastro.html"><button>Cadastro</button></a>
+                <a href="pages/login.html"><button>Entrar como usúario</button></a>
+                <a href="pages/loginMotorist.html"><button>Entrar como motorista</button></a>
+            </div>
+        </nav>
+        <button class="menu_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="container_menu">
+        <div>
+            <a href="#" class="logo">Save World</a>
+            <button class="close">&times;</button>
+        </div>
+        <div class="menu_links">
+            <a href="#inicio">Início</a>
+            <a href="#importancia">Importância</a>
+            <a href="#sobre">Sobre Nós</a>
+        </div>
+        <div class="menu_buttons">
+            <a href="pages/primeiroCadastro.html"><button>Cadastro</button></a>
+            <a href="pages/login.html"><button>Entrar como usúario</button></a>
+            <a href="pages/loginMotorist.html"><button>Entrar como motorista</button></a>
+        </div>
+    </div>
+
+    <main>
+        <section id="inicio" class="img_principal">
+            <div class="text">
+                <h1>SaveWorld</h1>
+                <p>Transformando o presente, preservando o futuro. Nossa missão é criar um mundo mais sustentável através da reciclagem inovadora e consciente.</p>
+                <a href="#importancia" class="saibaMais">Saiba Mais</a>
+            </div>
+        </section>
+
+        <section id="importancia" class="div_section">
+            <div class="container">
+                <h2 class="titulo">Nossa Importância</h2>
+                <div class="importancia">
+                    <div class="importancia_card">
+                        <h3>Impacto Ambiental</h3>
+                        <p>Através de processos inovadores de reciclagem, reduzimos significativamente a pegada ambiental e contribuímos para um planeta mais limpo.</p>
+                    </div>
+                    <div class="importancia_card">
+                        <h3>Economia Circular</h3>
+                        <p>Lideramos a transformação para uma economia circular, onde resíduos se tornam recursos valiosos.</p>
+                    </div>
+                    <div class="importancia_card">
+                        <h3>Compromisso Social</h3>
+                        <p>Geramos empregos locais e promovemos educação ambiental, construindo uma comunidade mais consciente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre_nos">
+            <div class="container">
+                <h2 class="titulo">Nossa Equipe</h2>
+                <div class="grid">
+                    <div class="nos">
+                        <img src="#" alt="Guilherme Persch" loading="lazy">
+                        <h3>Guilherme Persch</h3>
+                        <p>Diretor, desenvolvedor e fundador</p>
+                    </div>
+                    <div class="nos">
+                        <img src="#" alt="João Guimarães" loading="lazy">
+                        <h3>João Guimarães</h3>
+                        <p>Diretor, desenvolvedor e fundador</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container_empresa">
+            <div class="container">
+                <div class="extra"></div>
+                <div class="grid_extra">
+                    <div class="extra_card">
+                        <h3>Nossa Missão</h3>
+                        <p>Somos um grupo dedicado a promover a reciclagem inovadora, buscando soluções sustentáveis para transformar resíduos em recursos e impactar positivamente o meio ambiente.</p>
+                    </div>
+                    <div class="extra_card">
+                        <h3>Quem Somos</h3>
+                        <p>Uma equipe apaixonada por sustentabilidade, tecnologia e educação ambiental, comprometida em criar um futuro melhor para todos através de ações conscientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container_qr">
+            <div class="container">
+                <div class="qr">
+                    <div class="qr_text">
+                        <h2>Escaneie o QR Code</h2>
+                        <p>Acesse pelo seu dispositivo móvel e teste agora mesmo as capacidades do SaveWorld.</p>
+                    </div>
+                    <div class="qr-code">
+                        <img src="images/qrcode.png" alt="QR Code EcoRecicla" loading="lazy">
+                        <p>Escaneie para mais informações</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer_container">
+                <div class="info">
+                    <p>Transformando o futuro através da reciclagem sustentável</p>
+                    <p>saveworld@gmail.com.br</p>
+                    <p>(51) 99619-1168</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.container_menu');
+            const mobileMenuBtn = document.querySelector('.menu_btn');
+            const closeBtn = document.querySelector('.close');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('active');
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+
+            const menuLinks = document.querySelectorAll('.menu_links a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+        });
+    </script>
+</body>
+</html>

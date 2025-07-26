@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sistema de Coleta Seletiva - Área do Motorista</title>
+    <link rel="stylesheet" href="../styles/motorista.css" />
+    <script src="../scripts/js/motorista2.js" defer></script>
+</head>
+<body>
+    <main class="layout-container">
+        <header class="motorista-header">
+            <h1 class="titulo-painel">Painel do Motorista - Coleta Seletiva</h1>
+            <p class="subtitulo-painel">Bem-vindo ao sistema de gerenciamento de coletas</p>
+        </header>
+
+        <section class="coleta-section">
+            <form class="filtros-form" aria-label="Filtros de coleta">
+                <aside class="filtro-bloco">
+                    <label for="filtro-bairro" class="label-oculto">Filtro por Bairro</label>
+                    <select id="filtro-bairro" class="campo-select">
+                        <option value="">Todos os bairros</option>
+                    </select>
+                    <button type="button" class="btn-limpar" id="clear-bairro">Limpar</button>
+                </aside>
+
+                <aside class="filtro-bloco">
+                    <label for="filtro-material" class="label-oculto">Filtro por Material</label>
+                    <select id="filtro-material" class="campo-select">
+                        <option value="">Tipo de Material</option>
+                        <option value="reciclável">Reciclável</option>
+                        <option value="orgânico">Orgânico</option>
+                        <option value="especial">Especial</option>
+                    </select>
+                    <button type="button" class="btn-limpar" id="clear-material">Limpar</button>
+                </aside>
+
+                <aside class="filtro-bloco">
+                    <label for="filtro-data" class="label-oculto">Filtro por Data</label>
+                    <input type="date" id="filtro-data" class="campo-data" />
+                    <button type="button" class="btn-limpar" id="clear-data">Limpar</button>
+                </aside>
+            </form>
+
+            <article aria-label="Lista de coletas">
+                <table class="tabela-coletas">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Data</th>
+                            <th>Bairro</th>
+                            <th>Tipo de Material</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
+
+    <section id="modal-detalhes" class="modal-coleta" role="dialog" aria-modal="true" aria-labelledby="detalhes-titulo" style="display:none;">
+        <article class="conteudo-modal">
+            <span class="fechar-modal" onclick="fecharModal()" aria-label="Fechar modal">&times;</span>
+            <h2 id="detalhes-titulo">Detalhes da Coleta</h2>
+            <div class="conteudo-detalhes" id="detalhes-conteudo"></div>
+        </article>
+    </section>
+</body>
+</html>
